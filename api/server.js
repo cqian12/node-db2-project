@@ -1,7 +1,7 @@
 const express = require("express")
-
+const cars = require('./cars/cars-router')
 const server = express()
 
-// DO YOUR MAGIC
+server.use('/api/cars', cars)
 
 module.exports = server
