@@ -1,4 +1,5 @@
-const router = require('express')
+const express = require('express')
+const router = express.Router()
 const mw = require('./cars-middleware')
 const Cars = require('./cars-model')
 
@@ -24,3 +25,4 @@ router.post('/', mw.checkCarPayload, mw.checkVinNumberValid, mw.checkVinNumberUn
     }
 })
 
+module.exports = router

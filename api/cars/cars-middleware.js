@@ -1,13 +1,6 @@
 const Cars = require('./cars-model')
 const vinVal = require('vin-validator')
 
-module.exports = {
-  checkCarId,
-  checkCarPayload,
-  checkVinNumberUnique,
-  checkVinNumberValid
-}
-
 const checkCarId = async (req, res, next) => {
   const { id } = req.params
   try {
@@ -68,4 +61,11 @@ const checkVinNumberUnique = async (req, res, next) => {
   } catch(err) {
     next(err)
   }
+}
+
+module.exports = {
+  checkCarId,
+  checkCarPayload,
+  checkVinNumberUnique,
+  checkVinNumberValid
 }
