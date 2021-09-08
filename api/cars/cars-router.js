@@ -5,7 +5,7 @@ const mw = require('./cars-middleware')
 
 router.get('/', async (req, res, next) => {
     try {
-        const cars = Cars.getAll()
+        const cars = await Cars.getAll()
         res.json(cars)
     } catch(err) {
         next(err)
